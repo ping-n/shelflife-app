@@ -1,5 +1,10 @@
-<header>
-<%= render "shared/nav" %>
-</header>
-<h1>ShelfLife!</h1>
-<h2>What's in my fridge, and is it still ok?</h2>
+<h1>Foods</h1>
+
+<% @foods.each do |food| %>
+    <p><%= food.name %></p>
+    <p><%= food.opened %></p>
+    <p><%= food.expiry_after_open %></p>
+    <p><%= food.expiry %></p>
+    <p><%= food.volume %></p>
+    <p><%= food.location_id %></p>
+<% end %>
