@@ -1,0 +1,15 @@
+<%= form_with model: food, local: true, class: "listings-form" do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :opened %>
+    <%= form.date_field :opened %>
+    <%= form.label :expiry_after_open %>
+    <%= form.date_field :expiry_after_open %>
+    <%= form.label :expiry %>
+    <%= form.date_field :expiry %>
+    <%= form.label :volume %>
+    <%= form.number_field :volume %>
+    <%= form.label :location %>
+    <%= form.collection_select(:location_id, current_user.fridges.first.location, :id, :name) %>
+    <%= form.submit %>
+<% end %>

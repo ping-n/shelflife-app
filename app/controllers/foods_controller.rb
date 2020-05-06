@@ -1,8 +1,9 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: %i[show update destroy]
+  before_action :set_food, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   def index
+    @fridge = current_user.fridges.first
     @foods = Food.where(user: current_user)
   end
 
@@ -11,6 +12,8 @@ class FoodsController < ApplicationController
   def new
     @food = Food.new
   end
+
+  def edit; end
 
   def create
     @food = current_user.foods.create(food_params)
@@ -32,12 +35,13 @@ class FoodsController < ApplicationController
 
   def destroy
     @food.destroy
+    redirect_to root_path
   end
 
   private
 
   def food_params
-    params.require(:foods).permit(
+    params.require(:food).permit(
       :name,
       :opened,
       :expiry,
