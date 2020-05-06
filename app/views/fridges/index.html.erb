@@ -1,0 +1,8 @@
+<h1>Foods</h1>
+<ul class="box">
+<% @fridges.each do |fridge| %>
+    <li class="box">
+      <h2><%= fridge.name %></h2>
+    </li>
+<% end %>
+</ul>

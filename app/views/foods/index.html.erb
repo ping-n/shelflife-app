@@ -1,10 +1,13 @@
 <h1>Foods</h1>
-
+<ul class="box">
 <% @foods.each do |food| %>
-    <p><%= food.name %></p>
-    <p><%= food.opened %></p>
-    <p><%= food.expiry_after_open %></p>
-    <p><%= food.expiry %></p>
-    <p><%= food.volume %></p>
-    <p><%= food.location_id %></p>
+    <li class="box">
+      <h2><%= food.name %></h2>
+      <p><%= food.opened %></p>
+      <p><%= food.expiry_after_open %></p>
+      <p><%= food.expiry %></p>
+      <p><%= food.volume %></p>
+      <p><%= food.location_id %></p>
+    </li>
 <% end %>
+</ul>

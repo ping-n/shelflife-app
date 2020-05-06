@@ -25,12 +25,24 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
      id="defs873">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient836">
+      <stop
+         style="stop-color:#6495ed;stop-opacity:1;"
+         offset="0"
+         id="stop832" />
+      <stop
+         style="stop-color:#1a64e6;stop-opacity:1"
+         offset="1"
+         id="stop834" />
+    </linearGradient>
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
        inkscape:vp_x="-4625.3255 : 1435.6313 : 1"
@@ -47,6 +59,15 @@
          result="blur"
          id="feGaussianBlur1062" />
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient836"
+       id="linearGradient838"
+       x1="512"
+       y1="0"
+       x2="1024"
+       y2="1024"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -68,29 +89,31 @@
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer3"
-     inkscape:snap-global="false" />
+     inkscape:snap-global="true"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-edge-midpoints="true" />
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="bg"
      style="display:none;opacity:1">
     <image
-       sodipodi:absref="/home/sal/Desktop/code/projects/shelf-life/logo-doodle.png"
+       sodipodi:absref="/home/sal/Desktop/code/projects/shelflife-app/app/assets/images/logo-doodle.png"
        xlink:href="logo-doodle.png"
-       y="-149.32834"
-       x="-154.10782"
-       id="image877"
-       style="image-rendering:optimizeQuality"
-       preserveAspectRatio="none"
+       width="1382.4"
        height="1382.4"
-       width="1382.4" />
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       id="image877"
+       x="-154.10782"
+       y="-149.32834" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="grads">
     <rect
-       style="opacity:0.85;vector-effect:none;fill:#6495ed;fill-opacity:0.9254902;stroke:none;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       style="opacity:0.85;vector-effect:none;fill:url(#linearGradient838);fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect1066"
        width="1024"
        height="1024"
