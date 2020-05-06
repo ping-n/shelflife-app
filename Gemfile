@@ -59,3 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #authenication
 gem 'devise'
 gem 'cancancan'
+
+
+#Amazon s3
+gem "aws-sdk-s3", "~> 1.63"
