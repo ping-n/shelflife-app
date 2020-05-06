@@ -48,7 +48,8 @@ class FoodsController < ApplicationController
       :expiry_after_open,
       :volume,
       :user_id,
-      :location_id
+      :location_id,
+      :picture
     )
   end
 
