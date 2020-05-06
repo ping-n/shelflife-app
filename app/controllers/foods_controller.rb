@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: %i[show update destroy]
+  before_action :set_food, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   def index
@@ -12,6 +12,8 @@ class FoodsController < ApplicationController
   def new
     @food = Food.new
   end
+
+  def edit; end
 
   def create
     @food = current_user.foods.create(food_params)

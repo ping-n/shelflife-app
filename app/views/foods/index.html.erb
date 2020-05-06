@@ -13,7 +13,7 @@
             <li><%= food.expiry %></li>
             <li><%= food.volume %></li>
             <li><%= food.location_id %></li>
-            <li><%= link_to "Show", food %></li>
+            <li><%= link_to "Show", food %> | <%= link_to 'Edit', edit_food_path(food.id) %></li>
         <% end %>
         </ul>
     <% end %>
