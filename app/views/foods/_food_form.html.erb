@@ -11,5 +11,7 @@
     <%= form.number_field :volume %>
     <%= form.label :location %>
     <%= form.collection_select(:location_id, current_user.fridges.first.location, :id, :name) %>
+    <%= form.label :picture %> 
+    <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
     <%= form.submit %>
 <% end %>
