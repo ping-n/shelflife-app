@@ -3,7 +3,7 @@ class CreateLocations < ActiveRecord::Migration[6.0]
     create_table :locations do |t|
       t.string :name
       t.float :volume
-      t.references :food, null: false, foreign_key: true
+      t.references :fridge, null: false, foreign_key: true
 
       t.timestamps
     end
