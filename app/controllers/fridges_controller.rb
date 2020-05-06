@@ -6,6 +6,16 @@ class FridgesController < ApplicationController
     @fridge = Fridge.new
   end
 
+  def create
+    @fridge = current_user.fridges(fridge_params)
+    if @fridge.errors.any
+      render :new
+    else
+      flash[:success] = 'You successfully added a fridge'
+      redirect_to root_path
+    end
+  end
+
   private
 
   def fridge_params
