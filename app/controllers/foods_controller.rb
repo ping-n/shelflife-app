@@ -37,12 +37,12 @@ class FoodsController < ApplicationController
 
   def food_params
     params.require(:foods).permit(
-      :name, 
-      :opened, 
-      :expiry, 
-      :expiry_after_open, 
-      :volume, 
-      :user_id, 
+      :name,
+      :opened,
+      :expiry,
+      :expiry_after_open,
+      :volume,
+      :user_id,
       :location_id
     )
   end
