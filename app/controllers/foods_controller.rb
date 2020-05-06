@@ -38,7 +38,7 @@ class FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:foods).permit(
+    params.require(:food).permit(
       :name,
       :opened,
       :expiry,
