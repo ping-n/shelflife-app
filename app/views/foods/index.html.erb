@@ -1,2 +1,10 @@
-<h1>Foods#index</h1>
-<p>Find me in app/views/foods/index.html.erb</p>
+<h1>Foods</h1>
+
+<% @foods.each do |food| %>
+    <p><%= food.name %></p>
+    <p><%= food.opened %></p>
+    <p><%= food.expiry_after_open %></p>
+    <p><%= food.expiry %></p>
+    <p><%= food.volume %></p>
+    <p><%= food.location_id %></p>
+<% end %>
