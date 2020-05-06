@@ -32,7 +32,10 @@ https://dbdiagram.io/d/5eb239de39d18f5553fec229
   - Some foods
 - Fridge has:
   - Some locations to put things
+- Location has:
+  - A volume
 - Food has:
   - A User
   - A location
   - An expiry date
+  - A volume
