@@ -1,4 +1,4 @@
-# require_relative 'data/foods'
+require_relative 'data/foods'
 
 puts 'Seeding Users'
 
@@ -8,12 +8,12 @@ user3 = User.create(email: 'ping@gmail.com', password: 'password')
 
 puts 'Seeded Users'
 
-puts 'Seeding Users'
+puts 'Seeding Fridges'
 
 fridge = Fridge.create(name: "Daniel's Fridge", user_id: 1)
-fridge_2 = Fridge.create(name: "Daniel's Fridge", user_id: 2)
+fridge_2 = Fridge.create(name: "Adrian's Fridge", user_id: 2)
 
-puts 'Seeded Users'
+puts 'Seeded Fridges'
 
 puts 'Seeding locations'
 
@@ -29,7 +29,8 @@ puts 'Seeded Locations'
 
 puts 'Seeding Foods'
 
-5.times do |food|
-  food = Food.create(name: Faker::Food.ingredient, opened: Time.now, expiry_after_open: '2020/07/19', volume: 100, user_id: 1, location_id: 2)
-  puts "Generated #{food[:name]}"
+foods.each do |food|
+  food = Food.create(food)
+  puts "Created #{food[:name]}"
 end
+puts 'Seeded Foods'
