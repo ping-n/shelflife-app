@@ -1,2 +1,7 @@
-<h1>Foods#show</h1>
-<p>Find me in app/views/foods/show.html.erb</p>
+<h1><%= @food.name %></h1>
+
+<p>Expires: <%= @food.expiry %></p>
+<p>Opened: <%= @food.opened %></p>
+<p>Expiry After Opening: <%= @food.expiry_after_open %></p>
+<p>Volume: <%= @food.volume %></p>
+<p>Location: <%= @food.location_id %></p>
