@@ -63,3 +63,7 @@ gem 'cancancan'
 
 #Amazon s3
 gem "aws-sdk-s3", "~> 1.63"
+
+
+# generating seed files 
+gem "faker", "~> 2.11"
