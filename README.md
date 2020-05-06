@@ -25,7 +25,7 @@ Things you may want to cover:
 
 # Database structure:
 
-https://dbdiagram.io/d/5eb2375c39d18f5553fec1fb
+https://dbdiagram.io/d/5eb239de39d18f5553fec229
 
 - User has:
   - A fridge
