@@ -15,6 +15,9 @@
               <li>Location: <%= food.location[:name] %></li>
               <%= link_to "Show", food %> | <%= link_to 'Edit', edit_food_path(food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %>
           <% end %>
+          <%= link_to 'Delete location', [location.fridge, location],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
         </div>
       </ul>
     </div>
