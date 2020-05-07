@@ -12,6 +12,8 @@ class FoodsController < ApplicationController
 
   def new
     @food = Food.new
+    # @fridge = current_user.fridges.find(:fridge_id)
+    @fridge = current_user.fridges.find(params[:fridge_id])
   end
 
   def edit; end
