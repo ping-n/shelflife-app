@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @fridges = current_user.fridges
+    @fridges = current_user.fridges.includes(location: [:foods])
     @foods = Food.where(user: current_user)
   end
 
