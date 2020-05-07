@@ -1,8 +1,11 @@
 class FridgesController < ApplicationController
   before_action :set_fridge, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  load_and_authorize_resource
 
-  def show; end
+  def show
+    
+  end
 
   def index
     @fridges = current_user.fridges.all

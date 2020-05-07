@@ -19,7 +19,7 @@ class Food < ApplicationRecord
     unless opened
       return 0
     else
-      return opened
+      return opened.to_time.zone.to_i
     end
   end
 end
