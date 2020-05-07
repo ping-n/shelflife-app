@@ -2,13 +2,22 @@ class LocationsController < ApplicationController
   before_action :set_fridge
   before_action :authenticate_user!
 
+  def edit
+    # @location = @fridge.location.find(params[:location_id])
+  end
+
   def create
     @location = @fridge.location.create(location_params)
-    if @location.errors.any?
-      render :new
+    flash[:success] = 'Added fridge location'
+    redirect_to fridge_path(@fridge)
+  end
+
+  def update
+    @location = @fridge.location.find(params[:id])
+    if @location.update(location_params)
+      redirect_to @location
     else
-      flash[:success] = 'Added fridge location'
-      redirect_to fridge_path(@fridge)
+      render :edit
     end
   end
 

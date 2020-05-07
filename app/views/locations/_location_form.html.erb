@@ -1,0 +1,13 @@
+<%= form_with(model: [ @fridge, @fridge.location.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :volume %><br>
+    <%= form.number_field :volume %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
