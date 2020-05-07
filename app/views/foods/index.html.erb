@@ -24,6 +24,25 @@
 </div>
 <% end %>
 <div class="home-column">
-  Current food status:
+Current food status:
+<% if @expiring_foods || @expired_foods %>
+  <% if @expiring_foods  %>
+    Expiring food:
+    <ul>
+      <% @expiring_foods.each do |food| %>
+        <li><%= food.name %> are expiring in <%= food.days_to_expiry %> <%= food.days_to_expiry > 1 ? 'days' : 'day' %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if @expired_foods %>
+    Expired food:
+    <ul>
+      <% @expired_foods.each do |food| %>
+        <li><%= food.name %> has expired</li>
+      <% end %>
+    </ul>
+  <% end %>
+<% else %>
   All foods within their dates.
+<% end %>
 </div>

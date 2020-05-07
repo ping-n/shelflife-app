@@ -3,9 +3,7 @@ class FridgesController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
 
-  def show
-    
-  end
+  def show; end
 
   def index
     @fridges = current_user.fridges.all

@@ -5,6 +5,12 @@ class FoodsController < ApplicationController
 
   def index
     @fridges = current_user.fridges.includes(location: [:foods])
+    @expiring_foods = current_user.foods.select do |food|
+      food.days_to_expiry <= 2 && food.days_to_expiry >= 0
+    end
+    @expired_foods = current_user.foods.select do |food|
+      food.days_to_expiry.negative?
+    end
     @foods = Food.where(user: current_user)
   end
 
