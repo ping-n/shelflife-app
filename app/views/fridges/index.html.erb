@@ -1,0 +1,9 @@
+<h1>Fridges</h1>
+<ul class="box">
+  <% @fridges.each do |fridge| %>
+    <li class="box">
+      <h2><%= fridge.name %></h2>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add fridge", new_fridge_path%>

@@ -4,6 +4,10 @@ class FridgesController < ApplicationController
 
   def show; end
 
+  def index
+    @fridges = current_user.fridges.all
+  end
+
   def new
     @fridge = Fridge.new
   end
