@@ -1,5 +1,5 @@
 class FridgesController < ApplicationController
-  before_action :set_fridge, only: %i[show edit update]
+  before_action :set_fridge, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   def show; end
@@ -26,6 +26,11 @@ class FridgesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @fridge.destroy
+    redirect_to root_path
   end
 
   private
