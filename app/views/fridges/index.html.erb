@@ -1,4 +1,4 @@
-<h1><%= Fridge %></h1>
+<!-- <h1><%= Fridge %></h1>
 <ul class="box">
   <% @fridges.each do |fridge| %>
     <li class="button">
@@ -6,4 +6,34 @@
     </li>
   <% end %>
 </ul>
-<%= link_to "Add fridge", new_fridge_path%>
+<%= link_to "Add fridge", new_fridge_path%> -->
+
+<% if @fridges %>
+<div class="home-column">
+  <% @fridges.each do |fridge| %>
+    <ul class="fridge">
+        <h2><%= fridge.name %></h2>
+        <h5><%= link_to 'Show', fridge %> | <%= link_to "Add Fridge", new_fridge_path %> | <%= link_to "Add food", new_food_path%> </h5>
+        <% fridge.location.each do |loc| %>
+      <ul class="location">
+        <h3><%= loc.name %> | Volume: <%= loc.volume %></h3>
+          <% loc.foods.each do |food| %>
+            <div><%= image_tag food.picture if food.picture.attached? %></div>
+            <li><h4>Name: <%= food.name %></h4></li>
+            <li>Opened: <%= food.opened %></li>
+            <li>Expiry after opened:<%= food.expiry_after_open %></li>
+            <li>Expiry: <%= food.expiry %></li>
+            <li>Expired: <%= food.expired? %></li>
+            <li>Volume: <%= food.volume %></li>
+            <p><%= link_to "Show", food %> | <%= link_to 'Edit', edit_food_path(food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %></p>
+          <% end %>
+        </ul>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<% end %>
+<div class="home-column">
+  Current food status:
+  All foods within their dates.
+</div>

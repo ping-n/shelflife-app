@@ -6,6 +6,9 @@ class LocationsController < ApplicationController
     # @location = @fridge.location.find(params[:location_id])
   end
 
+  def new
+  end
+
   def create
     @location = @fridge.location.create(location_params)
     flash[:success] = 'Added fridge location'
