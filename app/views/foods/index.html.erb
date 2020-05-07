@@ -25,8 +25,8 @@
 <% end %>
 <div class="home-column">
 Current food status:
-<% if @expiring_foods || @expired_foods %>
-  <% if @expiring_foods  %>
+<% if !@expiring_foods.empty? || !@expired_foods.empty? %>
+  <% if !@expiring_foods.empty?  %>
     Expiring food:
     <ul>
       <% @expiring_foods.each do |food| %>
@@ -34,7 +34,7 @@ Current food status:
       <% end %>
     </ul>
   <% end %>
-  <% if @expired_foods %>
+  <% if !@expired_foods.empty? %>
     Expired food:
     <ul>
       <% @expired_foods.each do |food| %>
