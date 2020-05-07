@@ -17,8 +17,13 @@ class Food < ApplicationRecord
   end
 
   def opened?
+<<<<<<< HEAD
     if opened
       opened.to_time.zone.to_i
+=======
+    unless opened
+       return 0
+>>>>>>> 63813ffa44557fec0913b7c5d986444290593557
     else
       0
     end
