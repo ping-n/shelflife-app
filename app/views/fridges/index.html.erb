@@ -2,7 +2,7 @@
 <ul class="box">
   <% @fridges.each do |fridge| %>
     <li class="box">
-      <h2><%= fridge.name %></h2>
+      <h2><%= link_to fridge.name, fridge %></h2>
     </li>
   <% end %>
 </ul>
