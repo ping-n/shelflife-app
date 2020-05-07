@@ -3,7 +3,7 @@
   <% @fridges.each do |fridge| %>
     <ul class="fridge">
         <h2><%= fridge.name %></h2>
-        <h5><%= link_to 'Show', fridge %> | <%= link_to "Add a shelf", new_fridge_location_path(fridge) %> | <%= link_to "Add food", new_food_path%> </h5>
+        <h5><%= link_to 'Show', fridge %> | <%= link_to "Add a shelf", new_fridge_location_path(fridge) %> | <%= link_to "Add food", new_food_path(fridge) %> </h5>
         <% fridge.location.each do |loc| %>
       <ul class="location">
         <h3><%= loc.name %> | Volume: <%= loc.volume %></h3>

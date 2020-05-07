@@ -5,23 +5,28 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
+  margin: 0.5rem 0.5rem auto;
+  padding: 1rem;
   border-radius: 1rem;
   min-width: max-content;
   background-color: rgb(167, 192, 238);
   .location {
     @extend .fridge;
-    width: 100%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: calc(100% - 1rem);
     box-sizing: border-box;
     background-color: #00000020;
     h3 {
       margin: 0.3rem;
     }
     li {
-      margin-left: 1rem;
+      margin-left: 0.5rem;
     }
   }
+}
+ul.fridge {
+  list-style-type: none;
 }
 
 .home-column {
