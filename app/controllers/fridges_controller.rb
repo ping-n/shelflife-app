@@ -22,9 +22,9 @@ class FridgesController < ApplicationController
 
   def update
     if @fridge.update(fridge_params)
-        redirect_to @fridge
+      redirect_to @fridge
     else
-        render :edit
+      render :edit
     end
   end
 

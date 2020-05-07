@@ -1,4 +1,4 @@
 class Fridge < ApplicationRecord
   belongs_to :user
-  has_many :location
+  has_many :location, dependent: :destroy
 end
