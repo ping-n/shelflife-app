@@ -2,9 +2,14 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
     <%= form.label :opened %>
-    <%= form.date_field :opened %>
+    <% unless food.opened %>
+      <%= form.check_box :opened %>
+    <% else %>
+      <%= form.label :opened, food.opened %>
+      <%= form.date_field :opened %>
+    <% end %>
     <%= form.label :expiry_after_open %>
-    <%= form.date_field :expiry_after_open %>
+    <%= form.number_field :expiry_after_open %>
     <%= form.label :expiry %>
     <%= form.date_field :expiry %>
     <%= form.label :volume %>
