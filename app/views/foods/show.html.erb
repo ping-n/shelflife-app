@@ -3,7 +3,7 @@
 <p><%= image_tag @food.picture if @food.picture.attached? %></p>
 <p>Expires: <%= @food.expiry %></p>
 <p>Expired: <%= @food.expired? ? "Yes, throw it out." : "Expires in #{@food.days_to_expiry} days" %></p>
-<p>Opened: <%= "#{@food.opened.to_i} days ago." %></p>
+<p>Opened: <%= "#{@food.opened?.to_i} days ago." %></p>
 <p>Expiry After Opening: <%= @food.expiry_after_open %></p>
 <p>Volume: <%= @food.volume %></p>
 <p>Location: <%= @food.location[:name] %></p>
