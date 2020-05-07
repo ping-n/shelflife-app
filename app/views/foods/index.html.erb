@@ -1,22 +1,24 @@
 <h1>Foods</h1>
 
-<% if @fridge %>
-    <h2><%= @fridge.name %></h2>
-    <%= link_to "Add food", new_food_path%>
-    <% @fridge.location.each do |loc| %>
-    <h3><%= loc.name %> | Volume: <%= loc.volume %></h3>
-        <ul>
-        <% loc.foods.each do |food| %>
-            <div><%= image_tag food.picture if food.picture.attached? %></div>
-            <li><%= food.name %></li>
-            <li><%= food.opened %></li>
-            <li><%= food.expiry_after_open %></li>
-            <li><%= food.expiry %></li>
-            <li><%= food.volume %></li>
-            <li><%= food.location_id %></li>
-            <li><%= link_to "Show", food %> | <%= link_to 'Edit', edit_food_path(food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %> </li>
+<% if @fridges %>
+    <% @fridges.each do |fridge| %>
+        <h2><%= fridge.name %></h2><h5><%= link_to 'Show', fridge %></h5>
+        <%= link_to "Add food", new_food_path%>
+        <% fridge.location.each do |loc| %>
+        <h3><%= loc.name %> | Volume: <%= loc.volume %></h3>
+            <ul>
+            <% loc.foods.each do |food| %>
+                <div><%= image_tag food.picture if food.picture.attached? %></div>
+                <li><%= food.name %></li>
+                <li><%= food.opened %></li>
+                <li><%= food.expiry_after_open %></li>
+                <li><%= food.expiry %></li>
+                <li><%= food.volume %></li>
+                <li><%= food.location_id %></li>
+                <li><%= link_to "Show", food %> | <%= link_to 'Edit', edit_food_path(food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %> </li>
+            <% end %>
+            </ul>
         <% end %>
-        </ul>
     <% end %>
 <% end %>
 
