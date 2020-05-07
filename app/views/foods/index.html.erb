@@ -1,4 +1,5 @@
 <% if @fridges %>
+<div class="home-column">
   <% @fridges.each do |fridge| %>
     <ul class="fridge-box">
         <h2><%= fridge.name %></h2>
@@ -20,4 +21,9 @@
       <% end %>
     </ul>
   <% end %>
+</div>
 <% end %>
+<div class="home-column">
+  Current food status:
+  All foods within their dates.
+</div>
