@@ -26,8 +26,6 @@ class FoodsController < ApplicationController
   end
 
   def update
-  puts "UPDATE being called on FoodsController"
-  puts "food_params = #{food_params}"
     if @food.update(food_params)
       redirect_to @food
     else
