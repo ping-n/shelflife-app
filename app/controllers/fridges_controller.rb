@@ -1,12 +1,12 @@
 class FridgesController < ApplicationController
-<<<<<<< HEAD
-  def index
-    @fridges = Fridge.where(user: current_user)
-=======
   before_action :set_fridge, only: %i[show]
   before_action :authenticate_user!
 
   def show; end
+
+  def index
+    @fridges = current_user.fridges.all
+  end
 
   def new
     @fridge = Fridge.new
@@ -33,6 +33,5 @@ class FridgesController < ApplicationController
 
   def set_fridge
     @fridge = Fridge.find(params[:id])
->>>>>>> c2eee557b464fd78c452511f44322fa88d7de8d2
   end
 end
