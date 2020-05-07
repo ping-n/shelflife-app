@@ -1,3 +1,15 @@
 // Place all the styles related to the fridges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.location-food-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  ul {
+    div {
+      border: 1px solid black;
+    }
+  }
+}

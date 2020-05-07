@@ -1,22 +1,38 @@
-<%= form_with model: food, local: true, class: "listings-form" do |form| %>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <%= form.label :opened %>
-    <% unless food.opened %>
-      <%= form.check_box :opened %>
-    <% else %>
-      <%= form.label :opened, food.opened %>
-      <%= form.date_field :opened %>
-    <% end %>
-    <%= form.label :expiry_after_open %>
-    <%= form.number_field :expiry_after_open %>
-    <%= form.label :expiry %>
-    <%= form.date_field :expiry %>
-    <%= form.label :volume %>
-    <%= form.number_field :volume %>
-    <%= form.label :location %>
-    <%= form.collection_select(:location_id, current_user.fridges.first.location, :id, :name) %>
-    <%= form.label :picture %> 
-    <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+<div>
+  <%= form_with model: food, local: true, class: "listings-form" do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name, placeholder: 'Eggs' %>
+    </div>
+    <div>
+      <%= form.label :opened %>
+      <% unless food.opened %>
+        <%= form.check_box :opened %>
+      <% else %>
+        <%= form.label :opened, food.opened %>
+        <%= form.date_field :opened %>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :expiry_after_open %>
+      <%= form.date_field :expiry_after_open %>
+    </div>
+    <div>
+      <%= form.label :expiry %>
+      <%= form.date_field :expiry %>
+    </div>
+    <div>
+      <%= form.label :volume %>
+      <%= form.number_field :volume, placeholder: 1000 %>
+    </div>
+    <div>
+      <%= form.label :location %>
+      <%= form.collection_select(:location_id, current_user.fridges.first.location, :id, :name) %>
+    </div>
+    <div>
+      <%= form.label :picture %> 
+      <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+    </div>
     <%= form.submit %>
-<% end %>
+  <% end %>
+</div>

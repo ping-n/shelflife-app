@@ -1,5 +1,7 @@
 <%= form_with model: fridge, local: true do |form| %>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name, placeholder: "Awesome fridge"%>
+    </div>
     <%= form.submit %>
 <% end %>
