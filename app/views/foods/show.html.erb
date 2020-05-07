@@ -6,5 +6,5 @@
 <p>Opened: <%= @food.opened %></p>
 <p>Expiry After Opening: <%= @food.expiry_after_open %></p>
 <p>Volume: <%= @food.volume %></p>
-<p>Location: <%= @food.location_id %></p>
+<p>Location: <%= @food.location[:name] %></p>
 <p><%= link_to 'Edit', edit_food_path %>|<%= link_to "Delete", food_path, method: :delete %>|<%= link_to "Back", foods_path %></p>
