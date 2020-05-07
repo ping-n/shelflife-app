@@ -1,15 +1,15 @@
 <% if @fridges %>
 <div class="home-column">
   <% @fridges.each do |fridge| %>
-    <ul class="fridge-box">
+    <ul class="fridge">
         <h2><%= fridge.name %></h2>
         <h5><%= link_to 'Show', fridge %> | <%= link_to "Add Fridge", new_fridge_path %> | <%= link_to "Add food", new_food_path%> </h5>
         <% fridge.location.each do |loc| %>
-      <ul class="fridge">
+      <ul class="location">
         <h3><%= loc.name %> | Volume: <%= loc.volume %></h3>
           <% loc.foods.each do |food| %>
             <div><%= image_tag food.picture if food.picture.attached? %></div>
-            <li>Name: <%= food.name %></li>
+            <li><h4>Name: <%= food.name %></h4></li>
             <li>Opened: <%= food.opened %></li>
             <li>Expiry after opened:<%= food.expiry_after_open %></li>
             <li>Expiry: <%= food.expiry %></li>

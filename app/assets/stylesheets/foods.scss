@@ -5,14 +5,28 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  min-width: max-content;
+  background-color: rgb(167, 192, 238);
+}
+.location {
+  @extend .fridge;
+  background-color: #00000020;
+  h3 {
+    margin: 0.3rem;
+  }
+  li {
+    margin-left: 1rem;
+  }
 }
 
 .home-column {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  // min-width: 480px;
-  // max-width: 48vw;
-  // flex: 1 1 auto;
-  border: 1px solid black;
+  min-width: 480px;
+  flex: 0 1 5rem;
+  margin: 0.5rem;
 }
