@@ -51,7 +51,7 @@ The ShelfLife app is here to the save the day, ShelfLife allows the user to trac
 - AS3 integration
 - Creating a digital with multiple location
 - Tracking Food by adding them to the digital fridge
-- Let you know if how long expiration date of the food
+- Let you know if how long expiration date of the food and alert you about expired food
 - Unique and clean design
 - User friendly
 
