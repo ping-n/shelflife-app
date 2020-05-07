@@ -1,5 +1,5 @@
 class FridgesController < ApplicationController
-  before_action :set_fridge, only: %i[show]
+  before_action :set_fridge, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   def show; end
@@ -7,6 +7,8 @@ class FridgesController < ApplicationController
   def new
     @fridge = Fridge.new
   end
+
+  def edit; end
 
   def create
     @fridge = current_user.fridges.create(fridge_params)
@@ -16,6 +18,19 @@ class FridgesController < ApplicationController
       flash[:success] = 'You successfully added a fridge'
       redirect_to root_path
     end
+  end
+
+  def update
+    if @fridge.update(fridge_params)
+      redirect_to @fridge
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @fridge.destroy
+    redirect_to root_path
   end
 
   private
