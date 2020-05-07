@@ -4,6 +4,7 @@ def foods
     name: Faker::Food.ingredient,
     opened: Time.now,
     expiry_after_open: '2020/12/20',
+    expiry: '2020/12/20',
     volume: 200,
     user_id: 1,
     location_id: 1
@@ -12,6 +13,7 @@ def foods
     name: Faker::Food.ingredient,
     opened: Time.now,
     expiry_after_open: '2020/07/19',
+    expiry: '2020/07/19',
     volume: 100,
     user_id: 1,
     location_id: 2
@@ -19,7 +21,8 @@ def foods
   {
     name: Faker::Food.ingredient,
     opened: Time.now,
-    expiry_after_open: '2020/23/19',
+    expiry_after_open: '2020/09/19',
+    expiry: '2020/09/19',
     volume: 300,
     user_id: 2,
     location_id: 3
@@ -28,6 +31,7 @@ def foods
     name: Faker::Food.ingredient,
     opened: Time.now,
     expiry_after_open: '2020/10/25',
+    expiry: '2020/10/25',
     volume: 30,
     user_id: 2,
     location_id: 3
