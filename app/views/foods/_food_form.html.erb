@@ -6,7 +6,12 @@
     </div>
     <div>
       <%= form.label :opened %>
-      <%= form.date_field :opened %>
+      <% unless food.opened %>
+        <%= form.check_box :opened %>
+      <% else %>
+        <%= form.label :opened, food.opened %>
+        <%= form.date_field :opened %>
+      <% end %>
     </div>
     <div>
       <%= form.label :expiry_after_open %>
