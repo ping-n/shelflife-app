@@ -1,1 +1,221 @@
-/home/sal/src/sass-library/style.scss
+$backcolor: rgb(56, 87, 146);
+$forecolor: #ffe7bb;
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+h1, h2, p {
+  margin-left: 1rem;
+}
+.container {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ff804010;
+  margin-left: -1em;
+  padding-left: 1em;
+}
+.link {
+  &:hover {
+    background-color: #ffffff20;
+  }
+}
+a {
+  &:link, &:visited, &:hover, &:active {
+    text-decoration: none;
+    color: unset;
+  }
+  &:hover {
+    border-bottom: 1px dotted;
+    border-color: rgba( $forecolor, 0.5 );
+  }
+}
+
+html {
+  background-color: $backcolor;
+  color: $forecolor;
+}
+header, footer, body {
+  margin-left: -1em;
+  padding-left: 1em;
+}
+header, footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-color: #4080ff10;
+  box-sizing: border-box;
+  margin: 0;
+}
+footer {
+  padding: 0.5em 2em;
+  margin-top: auto;
+}
+ul.box {
+  padding-left: 1.5rem;
+  margin-right: 0.5rem;
+  flex-wrap: wrap;
+}
+li {
+  &.box {
+    display: block;
+    width: max-content;
+    margin-left: -1em;
+    margin-right: 1.5em;
+    flex-wrap: wrap;
+  }
+}
+.nav {
+  display: flex;
+  justify-content: left;
+  ul {
+  }
+  li {
+    display: inline-flex;
+    margin-left: -2.6em;
+    margin-right: 2.6em;
+    min-height: max-content;
+    padding: 0.4em 0.6em 0.4em 0.6em;
+    align-items: center;
+    background-color: #ffffff10;
+    border-radius: 0.5em 0 0.5em 0;
+    &:nth-child(1) {
+      font-weight: bold;
+      font-size: larger;
+    }
+  a:hover {
+    border: none;
+  }
+  }
+}
+.basicbox {
+  display: block;
+  box-sizing: border-box;
+  padding: 0.5em;
+  background-color: #ffffff10;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+}
+.prettybox {
+  @extend .basicbox;
+  border-radius: 0 0 1em 0;
+  border: 1px solid #ffffff30;
+}
+.box, form {
+  &:nth-child(1){
+    margin-top: 0.5em;
+  }
+  @extend .prettybox;
+  display: flex;
+  flex: 0 1 min-content;
+  min-width: 10em;
+  min-height: 4em;
+  align-items: center;
+  input {
+    display: inline-block;
+    background-color: #0080ff10;
+    color: $forecolor;
+    border: 1px solid #ffffff30;
+    height: 1.8em;
+    border-radius: 0.9em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  input[type=submit] {
+    border: 1px solid #ffffff30;
+    background-color: rgba( $forecolor, 0.5 );
+    color: #000;
+    margin-left: auto;
+    margin-right: 1.5em;
+    height: 1.8em;
+  }
+  label {
+    display: inline-block;
+    margin-left: 1em;
+    margin-right: 0.5em;
+  }
+}
+table {
+  @extend .prettybox;
+  flex: 0 1 min-content;
+  width: max-content;
+  border-spacing: 0;
+  padding: 0;
+  & thead, tbody {
+    display: table-row-group;
+    tr {
+      &:nth-last-child(1) {
+        td {
+          padding-bottom: 1em;
+        }
+        th {
+          padding-bottom: 0.5em;
+        }
+      }
+      &:nth-child(1) {
+        th {
+          padding-top: 1em;
+        }
+        td {
+          padding-top: 0.5em;
+        }
+      }
+    }
+    td, th {
+      border: 0;
+      padding: 0.2em 1em 0.2em 1em;
+      & > *.trunc {
+        max-width: 20em;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        text-overflow: ellipsis;
+      }
+    }
+    td {
+      &:nth-child(odd) {
+        background-color: #00000030;
+      }
+    }
+  }
+  & thead {
+    @extend .prettybox;
+    text-align: left;
+  }
+}
+
+.card {
+  @extend .prettybox;
+  width: 10em;
+  height: 10em;
+}
+.button {
+  @extend .prettybox;
+  display: inline-block;
+  width: max-content;
+  padding-right: 0.8em;
+}
+a.button {
+  @extend .button;
+  &:hover {
+    border: 1px solid #ffffff30;
+    background-color: #ffffff20;
+  }
+}
+
+.block {
+  flex-direction: column;
+  align-items: flex-start;
+  &>* {
+    margin-top: 0.5em;
+  }
+}
+
+.logo >* {
+  display: inline-block;
+  max-width: 80px;
+  max-height: 80px;
+  margin-right: 1em;
+  filter: drop-shadow( 2px 2px 2px #00000080);
+}
