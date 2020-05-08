@@ -1,0 +1,13 @@
+<ul class="location">
+  <h3><%= loc.name %> | Volume: <%= loc.volume %></h3>
+  <% loc.foods.each do |food| %>
+    <div><%= image_tag food.picture if food.picture.attached? %></div>
+    <li><h4>Name: <%= food.name %></h4></li>
+    <li>Opened: <%= food.opened %></li>
+    <li>Expiry after opened:<%= food.expiry_after_open %></li>
+    <li>Expiry: <%= food.expiry %></li>
+    <li>Expired: <%= food.expired? %></li>
+    <li>Volume: <%= food.volume %></li>
+    <p><%= link_to "Show", food %> | <%= link_to 'Edit', edit_fridge_food_path(fridge.id,food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %></p>
+  <% end %>
+</ul>
