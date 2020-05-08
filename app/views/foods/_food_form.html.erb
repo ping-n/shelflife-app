@@ -1,15 +1,15 @@
 <div>
-  <%= form_with model: food, local: true, class: "listings-form" do |form| %>
+  <%= form_with model: @food, local: true, class: "listings-form" do |form| %>
     <div>
       <%= form.label :name %>
       <%= form.text_field :name, placeholder: 'Eggs' %>
     </div>
     <div>
       <%= form.label :opened %>
-      <% unless food.opened %>
+      <% unless @food.opened %>
         <%= form.check_box :opened %>
       <% else %>
-        <%= form.label :opened, food.opened %>
+        <%= form.label :opened, @food.opened %>
         <%= form.date_field :opened %>
       <% end %>
     </div>
@@ -26,8 +26,13 @@
       <%= form.number_field :volume, placeholder: 1000 %>
     </div>
     <div>
+    <% if @fridge %>
       <%= form.label :location %>
-      <%= form.collection_select(:location_id, fridge.location, :id, :name) %>
+      <%= form.collection_select(:location_id, @fridge.location, :id, :name) %>
+    <% else %>
+      <%= form.label :location %>
+      <%= grouped_collection_select(:food, :location_id, current_user.fridges, :location, :name, :id, :name) %>
+    <% end %>
     </div>
     <div>
       <%= form.label :picture %> 
