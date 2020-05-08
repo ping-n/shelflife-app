@@ -1,5 +1,6 @@
 <ul class="location">
-  <h3><%= loc.name %> | Volume: <%= loc.volume %></h3>
+  <h3><%= loc.name %> | Volume: <%= loc.volume %><%= link_to 'Delete location', [loc.fridge, loc],method: :delete, data: { confirm: 'Are you sure?' } %>
+  </h3>
   <% loc.foods.each do |food| %>
     <div><%= image_tag food.picture if food.picture.attached? %></div>
     <li><h4>Name: <%= food.name %></h4></li>
