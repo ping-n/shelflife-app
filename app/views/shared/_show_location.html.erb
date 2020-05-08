@@ -1,4 +1,4 @@
-<!-- <ul class="location">
+<ul class="location">
   <h3><%= loc.name %> | Volume: <%= loc.volume %></h3>
   <% loc.foods.each do |food| %>
     <div><%= image_tag food.picture if food.picture.attached? %></div>
@@ -10,9 +10,4 @@
     <li>Volume: <%= food.volume %></li>
     <p><%= link_to "Show", food %> | <%= link_to 'Edit', edit_fridge_food_path(fridge.id,food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %></p>
   <% end %>
-</ul> -->
-
-<ul class="location">
-  <%= loc.name %>
-  <% puts "=== #{loc} #{loc.id.class} ==="%>
 </ul>
