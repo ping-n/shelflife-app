@@ -50,6 +50,15 @@
                 color: white;
             }
         }
-
+        
+    }
+}
+.error-handle{
+    .alert{
+        text-align: center;
+        border-radius: 1rem;
+        padding: 1px;
+        background-color: crimson;
+        margin: 2px 0;
     }
 }
