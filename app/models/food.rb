@@ -15,11 +15,12 @@ class Food < ApplicationRecord
       (expiry - Time.zone.today).to_i
     end
   end
+
   def opened?
-    unless opened
-       return 0
+    if opened
+      opened.to_time.zone.to_i
     else
-      return opened.to_time.zone.to_i
+      0
     end
   end
 end

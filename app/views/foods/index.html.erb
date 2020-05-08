@@ -15,7 +15,7 @@
             <li>Expiry: <%= food.expiry %></li>
             <li>Expired: <%= food.expired? %></li>
             <li>Volume: <%= food.volume %></li>
-            <p><%= link_to "Show", food %> | <%= link_to 'Edit', edit_food_path(food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %></p>
+            <p><%= link_to "Show", food %> | <%= link_to 'Edit', edit_fridge_food_path(fridge.id,food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %></p>
           <% end %>
         </ul>
       <% end %>
@@ -27,6 +27,29 @@
 </div>
 <% end %>
 <div class="home-column">
-  Current food status:
-  All foods within their dates.
+<h3>Current food status:</h3>
+<% if !@expiring_foods.empty? || !@expired_foods.empty? %>
+  <% if !@expiring_foods.empty?  %>
+  <div class="expiring">
+  <h3>Expiring food:</h3>
+    <ul>
+      <% @expiring_foods.each do |food| %>
+        <li><%= food.name %> are expiring in <%= food.days_to_expiry %> <%= food.days_to_expiry > 1 ? 'days' : 'day' %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <% if !@expired_foods.empty? %>
+  <div class="expired">
+    <h4>Expired food:<h4>
+    <ul>
+      <% @expired_foods.each do |food| %>
+        <li><%= food.name %> has expired</li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+<% else %>
+  <h4>All foods within their dates.</h4>
+<% end %>
 </div>
