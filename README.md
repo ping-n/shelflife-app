@@ -1,29 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# Database structure:
+## Database structure:
 
 https://dbdiagram.io/d/5eb239de39d18f5553fec229
 
@@ -40,7 +17,7 @@ https://dbdiagram.io/d/5eb239de39d18f5553fec229
   - An expiry date
   - A volume
 
-# What is ShelfLife?
+## What is ShelfLife?
 
 Have you ever bought something, placed into your fridge and forgot about it till your fridge smell really horrible? Maybe that's a bit extreme but I'm sure many of us our there, tend to stuff our fridge with food and forget about it.
 
@@ -62,9 +39,14 @@ Ruby on Rails
   - Devise
   - Cancancan
 
+Heroku
+
 Postgresql
 
-# Collaboration
--Adrian K
--Daniel A
--Ping N
+## Collaboration
+
+Adrian K
+
+Daniel A
+
+Ping N
