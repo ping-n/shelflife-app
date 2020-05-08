@@ -22,17 +22,7 @@ class FoodsController < ApplicationController
     @food = Food.new
   end
 
-  def new_in_fridge
-    @food = Food.new
-  end
-
-  def edit
-    @fridge = current_user.fridges.find(params[:fridge_id])
-  end
-
-  def edit_in_fridge
-    @fridge = current_user.fridges.find(params[:fridge_id])
-  end
+  def edit; end
 
   def create
     @food = current_user.foods.create!(food_params)
