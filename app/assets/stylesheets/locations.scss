@@ -1,3 +1,18 @@
 // Place all the styles related to the locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.loc-form{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    p{
+        margin: 2px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        label{
+            margin-right: 20px;
+        }
+    }
+}
