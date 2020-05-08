@@ -1,7 +1,11 @@
-<h1><%= @fridge.name %> </h1>
-<h5><%= link_to 'Edit', edit_fridge_path %> | <%= link_to "Delete Fridge", fridge_path(@fridge.id), method: :delete, data: { confirm: 'This will delete all locations and food in the fridge. Are you sure?' }  %></h5>
-
-<%= render @fridge.location %>
-
-<h2>Add a fridge location:</h2>
-<%= render 'locations/location_form' %>
+<div class="home-column">
+  <div class="fridge">
+    <h1><%= @fridge.name %> </h1>
+    <h5><%= link_to 'Edit', edit_fridge_path %> | <%= link_to "Delete Fridge", fridge_path(@fridge.id), method: :delete, data: { confirm: 'This will delete all locations and food in the fridge. Are you sure?' }  %></h5>
+    <h2>Add a fridge location:</h2>
+    <%= render 'locations/location_form' %>
+      <% @fridge.location.each do |loc| %>
+        <%= render partial: 'shared/show_location', locals: {loc: loc, fridge: @fridge} %>
+      <% end %>
+  </div>
+</div>
