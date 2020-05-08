@@ -3,7 +3,7 @@
   <div class="location">
     <h5><%= link_to 'Edit', edit_fridge_path %> | <%= link_to "Delete Fridge", fridge_path(@fridge.id), method: :delete, data: { confirm: 'This will delete all locations and food in the fridge. Are you sure?' }  %></h5>
 
-    <%= render @fridge.location %>
+    <%= @fridge.location[:name] %>
   </div>
   <div class="location">
     <h2>Add a fridge location:</h2>
