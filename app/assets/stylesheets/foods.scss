@@ -32,6 +32,11 @@
       padding: 5px;
       border-radius: 1rem;
     }
+    & img {
+      display: inline-block;
+      max-width: 6rem;
+      max-height: 6rem;
+    }
   }
 }
 ul.fridge {
