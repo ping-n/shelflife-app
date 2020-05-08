@@ -1,10 +1,12 @@
-<div>
+<div class="fridge">
+  <h1>Add New Food</h1>
+  <div class="location">
   <%= form_with model: @food, local: true, class: "listings-form" do |form| %>
-    <div>
+    <div class="form-input">
       <%= form.label :name %>
       <%= form.text_field :name, placeholder: 'Eggs' %>
     </div>
-    <div>
+    <div class="form-input">
       <%= form.label :opened %>
       <% unless @food.opened %>
         <%= form.check_box :opened %>
@@ -13,19 +15,19 @@
         <%= form.date_field :opened %>
       <% end %>
     </div>
-    <div>
+    <div class="form-input">
       <%= form.label :expiry_after_open %>
       <%= form.date_field :expiry_after_open %>
     </div>
-    <div>
+    <div class="form-input">
       <%= form.label :expiry %>
       <%= form.date_field :expiry %>
-    </div>
-    <div>
+    </div> 
+    <div class="form-input">
       <%= form.label :volume %>
       <%= form.number_field :volume, placeholder: 1000 %>
     </div>
-    <div>
+    <div class="form-input">
     <% if @fridge %>
       <%= form.label :location %>
       <%= form.collection_select(:location_id, @fridge.location, :id, :name) %>
@@ -34,10 +36,13 @@
       <%= grouped_collection_select(:food, :location_id, current_user.fridges, :location, :name, :id, :name) %>
     <% end %>
     </div>
-    <div>
+    <div class="form-input">
       <%= form.label :picture %> 
       <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
     </div>
-    <%= form.submit %>
+    <div id="form-input">
+      <%= form.submit %>
+    </div>
   <% end %>
+  </div>
 </div>
