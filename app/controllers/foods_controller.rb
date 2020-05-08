@@ -16,9 +16,7 @@ class FoodsController < ApplicationController
     @foods = Food.where(user: current_user)
   end
 
-  def show
-    @food_fridge = current_user.fridges.find(@food.location_id)
-  end
+  def show; end
 
   def new
     @food = Food.new
