@@ -1,10 +1,10 @@
-<%= form_with(model: [ @fridge, @fridge.location.build ], local: true) do |form| %>
+<%= form_with(model: [ @fridge, @fridge.location.build ], local: true, class: 'loc-form') do |form| %>
   <p>
     <%= form.label :name %>
     <%= form.text_field :name %>
   </p>
   <p>
-    <%= form.label :volume %><br>
+    <%= form.label :volume %>
     <%= form.number_field :volume %>
   </p>
   <p>
