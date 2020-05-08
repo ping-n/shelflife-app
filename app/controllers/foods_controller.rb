@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[show edit update destroy]
   # before_action :set_location
+  before_action :set_fridge
   before_action :authenticate_user!
   load_and_authorize_resource
 
@@ -19,16 +20,16 @@ class FoodsController < ApplicationController
 
   def new
     @food = Food.new
-    @fridge = current_user.fridges.find(params[:fridge_id])
   end
+
   def new_in_fridge
     @food = Food.new
-    @fridge = current_user.fridges.find(params[:fridge_id])
   end
 
   def edit
     @fridge = current_user.fridges.find(params[:fridge_id])
   end
+
   def edit_in_fridge
     @fridge = current_user.fridges.find(params[:fridge_id])
   end
@@ -36,10 +37,9 @@ class FoodsController < ApplicationController
   def create
     @food = current_user.foods.create!(food_params)
     if @food.errors.any?
-      # render :new]
-      redirect_to root_path
+      render :new
     else
-      # flash[:success] = 'You successfully added a food!'
+      flash[:success] = 'You successfully added a food!'
       redirect_to root_path
     end
   end
@@ -69,6 +69,14 @@ class FoodsController < ApplicationController
       :user_id,
       :location_id,
       :picture
+    )
+  end
+
+  def set_fridge
+    return unless params[:fridge_id]
+
+    @fridge = current_user.fridges.find(
+      params[:fridge_id]
     )
   end
 

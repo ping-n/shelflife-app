@@ -15,7 +15,7 @@
             <li>Expiry: <%= food.expiry %></li>
             <li>Expired: <%= food.expired? %></li>
             <li>Volume: <%= food.volume %></li>
-            <p><%= link_to "Show", food %> | <%= link_to 'Edit', edit_food_path(food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %></p>
+            <p><%= link_to "Show", food %> | <%= link_to 'Edit', edit_fridge_food_path(fridge.id,food.id) %> | <%= link_to "Delete", food_path(food.id), method: :delete %></p>
           <% end %>
         </ul>
       <% end %>
