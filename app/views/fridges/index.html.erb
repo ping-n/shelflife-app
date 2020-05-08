@@ -1,19 +1,19 @@
 
-<% if @fridges %>
 <div class="home-column">
+<% if @fridges %>
   <% @fridges.each do |fridge| %>
     <ul class="fridge">
       <h2><%= fridge.name %><%= link_to "Delete Fridge", fridge_path(fridge.id), method: :delete, data: { confirm: 'This will delete all locations and food in the fridge. Are you sure?' }, class: "inlinebutton" %></h2>
       <h5><%= link_to 'Show', fridge %> | <%= link_to "Add Fridge", new_fridge_path %> | <%= link_to "Add food", new_food_path%> </h5>
       <% fridge.location.each do |loc| %>
-        <%= render partial: 'shared/show_location', locals: {loc: loc, fridge: fridge} %>
+        <%= render partial: 'shared/show_location', locals: {loc: loc, fridge: fridge} unless loc.nil? %>
       <% end %>
     </ul>
   <% end %>
-</div>
 <% end %>
-<div class="fridge">
-  <%= link_to "New fridge", new_fridge_path, class: "location" %>
+  <div class="fridge">
+    <%= link_to "New fridge", new_fridge_path, class: "location" %>
+  </div>
 </div>
 <div class="home-column">
   Current food status:
