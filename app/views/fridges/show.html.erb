@@ -5,7 +5,9 @@
     <h2>Add a fridge location:</h2>
     <%= render 'locations/location_form' %>
       <% @fridge.location.each do |loc| %>
-        <%= render partial: 'shared/show_location', locals: {loc: loc, fridge: @fridge} %>
+        <% if loc.id != nil %>
+          <%= render partial: 'shared/show_location', locals: {loc: loc, fridge: @fridge} %>
+        <% end %>
       <% end %>
   </div>
 </div>
