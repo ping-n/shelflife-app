@@ -24,7 +24,7 @@
   <h3>Expiring food:</h3>
     <ul>
       <% @expiring_foods.each do |food| %>
-        <li><%= food.name %> are expiring in <%= food.days_to_expiry %> <%= food.days_to_expiry > 1 ? 'days' : 'day' %></li>
+        <li><%= food.name %> expires in <%= food.days_to_expiry %> <%= food.days_to_expiry == 1 ? 'day' : 'days' %></li>
       <% end %>
     </ul>
   </div>
